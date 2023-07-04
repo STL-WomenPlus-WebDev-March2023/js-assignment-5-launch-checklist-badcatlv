@@ -43,14 +43,16 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
 
     if (validateInput(pilot) === "Empty" || validateInput(copilot) === "Empty" || validateInput(fuelLevel) === "Empty" || validateInput(cargoLevel) === "Empty") {
         alert("All fields require input.");
+        launchStatus.innerHTML = `Awaiting Information Before Launch`;
         list.style.visibility = "hidden";
     }
 
     if (validateInput(fuelLevel) === "Not a Number" || validateInput(cargoLevel) === "Not a Number" || validateInput(pilot) === "Is a Number" || validateInput(copilot) === "Is a Number") {
         alert("Valid input required.");
+        launchStatus.innerHTML = `Awaiting Information Before Launch`;
         list.style.visibility = "hidden";
     }
-    
+
     list.style.visibility = "visible";
 
     pilotStatus.innerHTML = `Pilot ${pilot} is ready for launch`;
@@ -82,7 +84,8 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
 async function myFetch() {
     let planetsReturned;
 
-    planetsReturned = await fetch().then(function (response) {
+    planetsReturned = await fetch("https://handlers.education.launchcode.org/static/planets.json").then(function (response) {
+        return response.json();
     });
     // get the json from the response
     return planetsReturned;
