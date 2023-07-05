@@ -38,20 +38,8 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
     let fuelStatus = document.getElementById("fuelStatus");
     let cargoStatus = document.getElementById("cargoStatus");
     let launchStatus = document.getElementById("launchStatus");
+    
     list.style.visibility = "visible";
-
-
-    // if (validateInput(pilot) === "Empty" || validateInput(copilot) === "Empty" || validateInput(fuelLevel) === "Empty" || validateInput(cargoLevel) === "Empty") {
-    //     alert("All fields require input.");
-    //     list.style.visibility = "hidden";
-    // }
-
-    // if (validateInput(fuelLevel) === "Not a Number" || validateInput(cargoLevel) === "Not a Number" || validateInput(pilot) === "Is a Number" || validateInput(copilot) === "Is a Number") {
-    //     alert("Valid input required.");
-    //     list.style.visibility = "hidden"
-    // }
-
-    //list.style.visibility = "visible";
 
     pilotStatus.innerHTML = `Pilot ${pilot} is ready for launch`;
     copilotStatus.innerHTML = `Co-pilot ${copilot} is ready for launch`;
@@ -76,7 +64,7 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
     }
 
     if (validateInput(pilot) != "Not a Number" || validateInput(copilot) != "Not a Number" || validateInput(fuelLevel) != "Is a Number" || validateInput(cargoLevel) != "Is a Number") {
-        alert("Valid input required for all fields.");
+        alert("Valid input required for all fields. Please check your entries.");
         list.style.visibility = "hidden";
         launchStatus.style.color = "black";
         launchStatus.innerHTML = `Awaiting Information Before Launch`;
