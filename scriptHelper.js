@@ -63,17 +63,17 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
         launchStatus.style.color = "rgb(65, 159, 106)";
     }
 
-    // if (validateInput(pilot) != "Not a Number") {
-    //     launchStatus.innerHTML = `Shuttle Not Ready for Launch`;
-    //     launchStatus.style.color = "rgb(199, 37, 78)";
-    //     pilotStatus.innerHTML = `Pilot not ready for launch`;
-    // }
+    if (validateInput(pilot) != "Not a Number") {
+        launchStatus.innerHTML = `Shuttle Not Ready for Launch`;
+        launchStatus.style.color = "rgb(199, 37, 78)";
+        pilotStatus.innerHTML = `Pilot not ready for launch`;
+    }
 
-    // if (validateInput(copilot) != "Not a Number") {
-    //     launchStatus.innerHTML = `Shuttle Not Ready for Launch`;
-    //     launchStatus.style.color = "rgb(199, 37, 78)";
-    //     copilotStatus.innerHTML = `Co-Pilot not ready for launch`;
-    // }
+    if (validateInput(copilot) != "Not a Number") {
+        launchStatus.innerHTML = `Shuttle Not Ready for Launch`;
+        launchStatus.style.color = "rgb(199, 37, 78)";
+        copilotStatus.innerHTML = `Co-Pilot not ready for launch`;
+    }
 
     // if (validateInput(fuelLevel) !="Is a Number") {
     //     launchStatus.innerHTML = `Shuttle Not Ready for Launch`;
@@ -87,11 +87,11 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
         fuelStatus.innerHTML = `Fuel level too low for launch`
     }
 
-    // if (validateInput(fuelLevel) != "Is a Number") {
-    //     launchStatus.innerHTML = `Shuttle Not Ready for Launch`;
-    //     launchStatus.style.color = "rgb(199, 37, 78)";
-    //     fuelStatus.innerHTML = `Fuel level unknown`
-    // }
+    if (validateInput(fuelLevel) != "Is a Number") {
+        launchStatus.innerHTML = `Shuttle Not Ready for Launch`;
+        launchStatus.style.color = "rgb(199, 37, 78)";
+        fuelStatus.innerHTML = `Fuel level unknown`
+    }
 
     if (cargoLevel > 10000) {
         launchStatus.innerHTML = `Shuttle Not Ready for Launch`;
@@ -99,16 +99,39 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
         cargoStatus.innerHTML = `Cargo mass too heavy for launch`;
     }
 
-    // if (validateInput(cargoLevel) != "Is a Number") {
-    //     launchStatus.innerHTML = `Shuttle Not Ready for Launch`;
-    //     launchStatus.style.color = "rgb(199, 37, 78)";
-    //     cargoStatus.innerHTML = `Cargo mass unknown`
-    // }
+    if (validateInput(cargoLevel) != "Is a Number") {
+        launchStatus.innerHTML = `Shuttle Not Ready for Launch`;
+        launchStatus.style.color = "rgb(199, 37, 78)";
+        cargoStatus.innerHTML = `Cargo mass unknown`
+    }
 
-    // if (cargoLevel <= 10000 && fuelLevel >= 10000) {
-    //     launchStatus.innerHTML = `Shuttle is Ready for Launch`;
-    //     launchStatus.style.color = "rgb(65, 159, 106)";
-    // }
+    if (validateInput(pilot) != "Not a Number") {
+        launchStatus.innerHTML = `Awaiting Information Before Launch`;
+    }
+
+    if (validateInput(copilot) != "Not a Number") {
+        launchStatus.innerHTML = `Awaiting Information Before Launch`;
+    }
+
+
+    if (fuelLevel < 10000) {
+        launchStatus.innerHTML = `Shuttle Not Ready for Launch`;
+        launchStatus.style.color = "rgb(199, 37, 78)";
+        fuelStatus.innerHTML = `Fuel level too low for launch`
+    } else if (validateInput(fuelLevel) != "Is a Number") {
+        launchStatus.innerHTML = `Awaiting Information Before Launch`;
+    }
+
+    if (cargoLevel > 10000) {
+        launchStatus.innerHTML = `Shuttle Not Ready for Launch`;
+        launchStatus.style.color = "rgb(199, 37, 78)";
+        cargoStatus.innerHTML = `Cargo mass too heavy for launch`;
+    }
+
+    if (validateInput(cargoLevel) != "Is a Number") {
+        launchStatus.innerHTML = `Awaiting Information Before Launch`;
+
+    }
 }
 
 
