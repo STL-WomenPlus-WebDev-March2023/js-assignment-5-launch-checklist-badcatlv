@@ -64,7 +64,7 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
     }
 
     if (validateInput(pilot) != "Not a Number" || validateInput(copilot) != "Not a Number" || validateInput(fuelLevel) != "Is a Number" || validateInput(cargoLevel) != "Is a Number") {
-        alert("Valid input required for all fields. Please check your entries.");
+        alert("Valid input required for all fields. Please check all entries.");
         list.style.visibility = "hidden";
         launchStatus.style.color = "black";
         launchStatus.innerHTML = `Awaiting Information Before Launch`;
